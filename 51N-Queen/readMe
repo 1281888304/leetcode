@@ -1,1 +1,56 @@
+还是和52一样用三个hashset一样
+先初始化一个全部都是 '.' 的char 2d array
+然后每一个column都尝试一下，尝试成功了就把这一行的board[row][col]换成Q，然后去下一行
+因为成功了row+1才往下一行走所以不会row重复
+
+class Solution {
+    HashSet<Integer> colSet=new HashSet<>();
+    HashSet<Integer> diff=new HashSet<>();
+    HashSet<Integer> sum=new HashSet<>();
+    public List<List<String>> solveNQueens(int n) {
+        List<List<String>> res=new ArrayList<>();
+        if(n<=0) return res;
+        char[][] board=new char[n][n];
+        //全部初始化为点
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                board[i][j]='.';
+            }
+        }
+        dfs(n,0,board,res);
+        return res;
+    }
+    
+    public void dfs(int n,int row,char[][] board,
+                    List<List<String>> res){
+        if(row==n){
+            List<String> temp=new ArrayList<>();
+            for(int i=0;i<n;i++){
+                temp.add(String.valueOf(board[i]));
+            }
+            res.add(temp);
+            return;
+        }
+        for(int col=0;col<n;col++){
+            if(!colSet.contains(col) && !sum.contains(row+col) && !diff.contains(row-col)){
+                colSet.add(col);
+                diff.add(row-col);
+                sum.add(row+col);
+                board[row][col]='Q';
+                dfs(n,row+1,board,res);
+                board[row][col]='.';
+                colSet.remove(col);
+                diff.remove(row-col);
+                sum.remove(row+col);
+            }
+        }
+        
+        
+        
+    }
+}
+
+
+
+
 
