@@ -1,1 +1,52 @@
+这里有一个问题是用坐标的话，对角线上从左上角往右下角走的话差diff是一样的 0-0 1-1 2-2
+对角线右上往左下走，和sum一样 0+2 1+1 2+0
+所以我们可以用三个hashset存col，diff，sum
+遍历的时候因为是for loop一行行遍历所以不会出现row有问题
+(0,0) | (0,1) | (0,2)
+(1,0) | (1,1) | (1,2)
+(2,0) | (2,1) | (2,2)
 
+所有的backtrack回溯为什么要remove掉因为加进去，然后dfs希望有返回，在回来的时候说明这条路行不通，remove掉下一种尝试
+
+ i 其实遍历的是column， level遍历才是row，但是你在for循环上面写的是row 不会相等，我看了半天，有点confusing，不过直接用三个set比较直接易懂！！！
+ 
+同感，整体思路是尝试把一个QUEEN放到一个row的某个col，如果这个QUEEN不会被上面所有row的QUEEN 攻击，那么就DFS到下一个row， 
+再把QUEEN放到某个col。所以，for loop是尝试把QUEEN放到某个col， dfs是跳到下一个row。如果能把QUEEN放到最后一个row,证明找到了一个解。
+同感，整体思路是尝试把一个QUEEN放到一个row的某个col，如果这个QUEEN不会被上面所有LEVEL的QUEEN 攻击，那么就DFS到下一个row， 再把QUEEN放到某个col。所以，for loop是尝试把QUEEN放到某个col， dfs是跳到下一个row。如果能把QUEEN放到最后一个row,
+证明找到了一个解。
+
+class Solution {
+    public int res=0;
+    HashSet<Integer> colSet=new HashSet<>();
+    HashSet<Integer> diff=new HashSet<>();
+    HashSet<Integer> sum=new HashSet<>();
+    public int totalNQueens(int n) {
+        
+        if(n<=0) return res;
+        dfs(0,n);
+        return res;
+    }
+    
+    public void dfs(int row,int n){
+        if(row==n){
+            res++;
+            return;
+        }
+        //不会有重叠的row
+        for(int col=0;col<n;col++){
+            if(!colSet.contains(col) && !diff.contains(row-col) 
+               &&!sum.contains(row+col)){
+                colSet.add(col);
+                diff.add(row-col);
+                sum.add(row+col);
+                dfs(row+1,n);
+                colSet.remove(col);
+                diff.remove(row-col);
+                sum.remove(row+col);
+            }
+        }
+    }
+}
+// (0,0) | (0,1) | (0,2)
+// (1,0) | (1,1) | (1,2)
+// (2,0) | (2,1) | (2,2)
