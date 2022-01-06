@@ -1,0 +1,27 @@
+把所有的加进set，然后一个个remove。虽然inner loop但是速度超过百分之七十
+这道题的精华就是set只能涵盖一个
+然后remove有的话就remove返回true，没有就返回false，remove可以随便用
+
+class Solution {
+
+    public int minimumLengthEncoding(String[] words) {
+        HashSet<String> set=new HashSet<>();
+        for(String word : words){
+            set.add(word);
+        }
+        for(String word : words){
+            int len=word.length();
+            for(int i=1;i<len;i++){
+                set.remove(word.substring(i));
+            }
+        }
+        int res=0;
+        for(String word : set){
+            res+=1;
+            res+=word.length();
+        }
+        return res;
+    }
+}
+
+
