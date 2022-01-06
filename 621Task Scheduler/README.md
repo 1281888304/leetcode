@@ -21,7 +21,6 @@ class Solution {
         for(int i=0;i<arr.length;i++){
             if(arr[i]==max) res++;
         }
-        
         return res<tasks.length? tasks.length : res;
     }
 }
