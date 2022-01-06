@@ -7,7 +7,9 @@ https://leetcode-cn.com/problems/task-scheduler/solution/tan-xin-tu-jie-dai-ma-j
 最后返回的时候，记得对比初始array的长度
 
 class Solution {
+
     public int leastInterval(char[] tasks, int n) {
+    
         if(n==0) return tasks.length;
         int[] arr=new int[26];
         for(char c : tasks){
