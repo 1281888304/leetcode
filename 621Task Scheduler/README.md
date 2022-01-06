@@ -1,6 +1,6 @@
 https://leetcode-cn.com/problems/task-scheduler/solution/tan-xin-tu-jie-dai-ma-jian-ji-by-chen-we-gnqo/
 
-<img src="images/621.png" >
+<img src="./images/621.png" >
 ![621](./images/621.png)
 
 如图片所示，分成max-1行，每列长度是n+1，每行都没有重复的task
