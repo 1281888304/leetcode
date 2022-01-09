@@ -16,7 +16,6 @@ class Solution {
         //把所有非质数变成false
         for(int i=2;i*i<n;i++){//所有i的倍数都变成false
             //这一步是为了避免浪费时间，比如说8的话，2那边肯定搞完了
-            //2 3 5 7不够，11 13的倍数也要考虑，一开始的失误
             if(isPrime[i]){
                 for(int j=i*i;j<n;j+=i){
                     isPrime[j]=false;
