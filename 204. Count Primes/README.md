@@ -4,6 +4,7 @@
 从2开始往上乘，所有能乘到的都不算质数，记得要做一个小插曲，比如说8的话，2那边的倍数已经解决了，就没必要再来一次了
 
 class Solution {
+
     public int countPrimes(int n) {
         if(n<=2) return 0;
         
