@@ -14,6 +14,8 @@ second开始为0 如果第二个开始是0，就break，尝试用第一个for lo
 third开始为0就和第一个一样了，因为他开始为0他只能是0，直接在遍历到后一位return false，因为如果 0000000的话，遍历到前一位会继续往下走，就成功了，遍历到后一位肯定就是不成功的，1203这种情况如果
 不return false，答案就错了
 
+最后一点，为什么要Long，因为有的时候很长，超过了integer的最大限定，比如说一个长度为15的，我们尝试first为13，就卡住了
+
 class Solution {
 
     public boolean isAdditiveNumber(String num) {
