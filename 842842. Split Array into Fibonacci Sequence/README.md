@@ -76,6 +76,7 @@ class Solution {
 }
 
 class Solution {
+    
     List<Integer> last=new ArrayList<>();
     public List<Integer> splitIntoFibonacci(String num) {
         List<Integer> res=new ArrayList<>();
