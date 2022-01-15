@@ -7,6 +7,9 @@
 
 这道题的精髓在于删掉以后桥接回去，往后走一步，找最左边的，这样才能刚刚好的卡在这个平衡，找到替换的，把需要删除的换成这个找到的数字，然后在root.right“删除找到的这个数”
 
+因为最后要返回root，导致要root.left=和root.right等于，不能直接把root改变
+
+
 ```` 
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
