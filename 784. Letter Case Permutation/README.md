@@ -10,6 +10,7 @@
 有了以后回到b  a1B在继续往后走得到a1B2（撤销了b在得到B）
 
 
+```` 
 class Solution {
 
     public List<String> letterCasePermutation(String s) {
@@ -37,6 +38,7 @@ class Solution {
         }
     }
 }
+````
 
 
 ```` 
