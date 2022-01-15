@@ -11,6 +11,7 @@
 
 
 class Solution {
+
     public List<String> letterCasePermutation(String s) {
         List<String> res=new ArrayList<>();
         s=s.toLowerCase();
