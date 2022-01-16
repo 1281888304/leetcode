@@ -9,4 +9,8 @@
 
 visited数组（boolean） 和start都是一个避免一个数字重复使用的问题
 
+剪枝就是有的枝跳过，经典题目leetcode 60
+https://leetcode-cn.com/problems/permutation-sequence/solution/hui-su-jian-zhi-python-dai-ma-java-dai-ma-by-liwei/
+
+
 
