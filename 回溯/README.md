@@ -7,4 +7,6 @@
 
 经常有要把小list加到大的list（result）里面，为什么要用add new ArrayList呢，因为如果不这样做，就是把地址加了进去，加进去以后回溯会继续对这个小的list惊醒操作，那么result这里的list就会变（因为是加的是地址）
 
+visited数组（boolean） 和start都是一个避免一个数字重复使用的问题
+
 
