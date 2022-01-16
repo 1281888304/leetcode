@@ -1,5 +1,5 @@
 <img width="629" alt="Screen Shot 2022-01-15 at 8 14 34 PM" src="https://user-images.githubusercontent.com/59748598/149647063-9cc73a9f-8d30-4b6e-8f1b-b9e1ade358a3.png">
-这道题的关键在于index，index在回溯里面的作用，就是为了不回头去加他
+这道题的关键在于index，index在回溯里面的作用，就是为了不回头去加他，为什么不是index+1，因为每个数字可以重复使用
 
 比如说[2,3,5,6,7].  key=7. 我们可以2+2+3 但是如果没有index，那么for loop从0开始，那样的话，3可以加2这是题目不允许的
 
