@@ -9,6 +9,8 @@
 
 visited数组（boolean） 和start/index都是一个避免一个数字重复使用的问题,
 
+但是index/start有多一种情况，因为开始的时候for(int i=start/index)可以避免从后往前加 比如了leetcode78，用了boolean就会出现[3,2,1]这种答案不要的
+
 有的时候我们为什么for loop里i>start/index才判断和前面数字一样吗，因为我们不想反复的加，通过回溯的时候index是和i一样的可以加，不让顺着for loop时候加（leetcode 90）
 
 剪枝就是有的枝跳过，经典题目leetcode 60
