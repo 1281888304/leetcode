@@ -7,7 +7,9 @@
 
 经常有要把小list加到大的list（result）里面，为什么要用add new ArrayList呢，因为如果不这样做，就是把地址加了进去，加进去以后回溯会继续对这个小的list惊醒操作，那么result这里的list就会变（因为是加的是地址）
 
-visited数组（boolean） 和start都是一个避免一个数字重复使用的问题
+visited数组（boolean） 和start/index都是一个避免一个数字重复使用的问题,
+
+有的时候我们为什么for loop里i>start/index才判断和前面数字一样吗，因为我们不想反复的加，通过回溯的时候index是和i一样的可以加，不让顺着for loop时候加（leetcode 90）
 
 剪枝就是有的枝跳过，经典题目leetcode 60
 https://leetcode-cn.com/problems/permutation-sequence/solution/hui-su-jian-zhi-python-dai-ma-java-dai-ma-by-liwei/
