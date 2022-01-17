@@ -13,6 +13,9 @@ visited数组（boolean） 和start/index都是一个避免一个数字重复使
 
 有的时候我们为什么for loop里i>start/index才判断和前面数字一样吗，因为我们不想反复的加，通过回溯的时候index是和i一样的可以加，不让顺着for loop时候加（leetcode 90）
 
+这里的i>index保证了如果i=index，然后两个一样是可以加的（回溯的时候可以加），但是从for loop顺上去不可以加，就避免了for loop循环上去的重复，
+一般是递归过去一种，for loop一种，有duplicate就可以这样避免
+
 剪枝就是有的枝跳过，经典题目leetcode 60
 https://leetcode-cn.com/problems/permutation-sequence/solution/hui-su-jian-zhi-python-dai-ma-java-dai-ma-by-liwei/
 
