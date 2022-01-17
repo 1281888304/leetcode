@@ -1,4 +1,4 @@
-就很简单的子集合，什么都加，出口直接加不需要return，等他自己for loop走完了return，用index/boolean数组都可以避免
+就很简单的子集合，什么都加，出口直接加不需要return，等他自己for loop走完了return，用index可以避免从后往前加
 
 
 ```` 
