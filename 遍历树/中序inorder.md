@@ -1,4 +1,5 @@
-![image](https://user-images.githubusercontent.com/59748598/150937547-7872db5f-3237-4621-b72f-c2cfc2084d5d.png)
+![image](https://user-images.githubusercontent.com/59748598/150946182-611b3b9a-75ff-48f6-b963-efc2b7276545.png)
+
 
 inorder left->Node->right
 
