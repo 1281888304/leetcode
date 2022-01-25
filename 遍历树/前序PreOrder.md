@@ -2,7 +2,7 @@
 
 <img width="599" alt="Screen Shot 2022-01-24 at 11 45 31 PM" src="https://user-images.githubusercontent.com/59748598/150933419-7a7a8586-1620-40ae-9e8c-b64bba8a4af5.png">
 
-![image](https://user-images.githubusercontent.com/59748598/150933743-74bc6c79-53f1-49bb-b8d5-c234162e9b9f.png)
+![image](https://user-images.githubusercontent.com/59748598/150946100-bbba9f46-1f2b-487e-9af7-cbec5ee97d57.png)
 
 
 preOrder前序就是上到左下，先把root放进去，res加root.val然后看看左右为不为空，不为就加。注意先加右边，因为stack先加后出，我们先要左边所以后加
