@@ -9,3 +9,4 @@ https://blog.csdn.net/yuzhiqiang666/article/details/80721436
 但是如果这个root刚好是之前出现过但是也是其中一个连通集合的root（即父亲节点还是本身），就没办法判断出现了几次。还要通过添加visited HashSet判断，很浪费速度。
 
 721合并邮件
+737 721 684 207都是graph + union found，redo again and again
