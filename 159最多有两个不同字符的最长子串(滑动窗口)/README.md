@@ -8,6 +8,34 @@ ccaabbb到b的时候，新的left是第一个a index=2
 
 ![image](https://user-images.githubusercontent.com/59748598/151888508-65e07366-bb75-4256-a416-efe948043660.png)
 
+```` 
+
+
+class Solution{
+    public int lengthOfLongestSubstringTwoDistinct(String s) {
+        if(s.length()<3)
+            return s.length();
+        int left=0,right=0;
+        Set<Character> set=new HashSet<>();
+        
+        int maxLen=0;
+        while(right<s.length()){
+            char c=s.charAt(right);
+            set.add(c);
+            if(set.size()>2){
+                left=right-1;
+                while(s.charAt(left-1)==s.charAt(left)){
+                    left--;
+                }
+                set.remove(s.charAt(left-1));
+            }
+            maxLen=Math.max(maxLen,right-left+1);
+            right++;            
+        }
+        return maxLen;
+    }
+}
+````
 
 
 
