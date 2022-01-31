@@ -1,6 +1,8 @@
 https://leetcode-cn.com/problems/continuous-subarray-sum/solution/de-liao-wo-ba-qian-zhui-he-miao-de-gan-g-c8kp/
 
-经典的在一个数组里面找和为target的subarray个数或者有没有，不是all possible所以不用回溯，经典套路是用HashMap，key一般存sum或者整除；如果是找not least leetcode 209用inner loop
+经典的在一个数组里面找和为target的subarray个数或者有没有，不是all possible所以不用回溯，经典套路是用HashMap，key一般存sum或者整除， value存折索引或者个数，索引的话初始值-1，个数初始值是1。 然后map.containskey(curSum-target)就代表有,就可以开始做业务了
+
+如果是找not least leetcode 209用inner loop
 
 
 前缀不管是map还是array，第一个都是0；
