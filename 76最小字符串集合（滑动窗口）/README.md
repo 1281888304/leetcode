@@ -11,6 +11,8 @@ t=ABC s=ADDADBBCDDDDDDDAAADDDEC
 
 所以loop完会变成ADBBC
 
+也有hashmap的一些特质，put的时候key不对返回false，get的时候找不到返回null，在去除多余的时候loop使用了
+
 
 ```` 
 class Solution {
@@ -29,26 +31,34 @@ class Solution {
         String res="";
         int size=Integer.MAX_VALUE;
         int counter=t.length();
+        
         while(right<s.length()){
-            char ch=s.charAt(right++);
-            if(allWords.get(ch)>0){
+            char char1=s.charAt(right);
+            right++;
+            if(allWords.get(char1)>0){
                 counter--;
             }
-            allWords.put(ch,allWords.get(ch)-1);
+            //这个时候allwords里面可以是负数
+            allWords.put(char1,allWords.get(char1)-1);
             
             while(counter==0){
                 //先判断答案
                 if(size>right-left){
-                    res=s.substring(left,right);
                     size=right-left;
+                    res=s.substring(left,right);
                 }
-                char ch2=s.charAt(left);
-                if(allWords.get(ch2)==0)
+                //尝试着缩小窗口
+                char leftChar=s.charAt(left);
+                //找不到的时候，get返回null
+                if(allWords.get(leftChar)==0){
                     counter++;
-                allWords.put(ch2,allWords.get(ch2)+1);
+                }
                 left++;
+                //找不到的时候，put返回false
+                allWords.put(leftChar,allWords.get(leftChar)+1);
             }
         }
+        
         return res;
     }
 }
