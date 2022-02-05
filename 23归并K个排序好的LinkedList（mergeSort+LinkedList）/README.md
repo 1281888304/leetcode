@@ -12,6 +12,12 @@ return l1;
 
 很精妙
 
+正常遍历的时候也要注意一个问题，如果是current作为Dummy.next的话，current就算赋值了，也连不上dummy。
+
+原因是这样的，如果暂时下一个为null，就最好不要动，有了current/prev .next=下一个对象，如果dummy.next=head没问题，构建了连接
+
+dummy.next=null的时候，current = dummy.next这个时候current是null，不是ListNode，current并没有指向dummy.next,而是指向了null
+
 ```` 
 /**
  * Definition for singly-linked list.
