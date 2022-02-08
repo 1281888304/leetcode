@@ -10,3 +10,5 @@ https://leetcode-cn.com/circle/article/2Xxlw3/
 然后背包问题494也是，每次只能选择往背包里放一次或者拓展背包，每个element只能用一次，就是dp二维数组
 
 背包问题最好就是把二维数组画出来，把第一行/其他的default画出来，default画出来就会清晰
+
+背包：https://leetcode-cn.com/problems/coin-change/solution/yi-pian-wen-zhang-chi-tou-bei-bao-wen-ti-sq9n/
