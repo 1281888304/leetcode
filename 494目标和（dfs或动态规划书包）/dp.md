@@ -20,7 +20,7 @@ dp[i-1][j+num+sum] 是上一行不为0的，减去这一行的num
 
                 j-num>-sum就比如target是-5（第一列），在这一列右上没有不能➖ 
 
-有个小细节，上面的target是从[-sum,sum] 没必要修改数字，从j的取值调整就好
+有个小细节，上面的target是从[-sum,sum] 没必要修改数字，从j的取值调整就好,因为是从[-sum,sum]。所以说，j可以取-sum/sum 不存在<=. / >=
 
 ```` 
 class Solution {
