@@ -4,7 +4,7 @@
 
 有几个边界条件，dp[0][0]=true当字符串是"" 的时候不投币（不做出选择）
 
-然后选择从哪一个开始，假设都可以从两边开始
+然后选择从哪一个开始，假设都可以从两边开始 第一行/第一列是我们的dp default。如图，他的第一个开始于a，就把上面数组（第一行dp[0][1]）的a设为true,dp[0][2]不符合直接break，第一列同样道理可惜不符合直接就break了
 
 <img width="376" alt="Screen Shot 2022-02-09 at 9 33 31 AM" src="https://user-images.githubusercontent.com/59748598/153257255-e325268f-2e0d-4754-a778-02c51bbfc7ba.png">
 
