@@ -29,11 +29,11 @@ match看右下角，不包括当前的字母的最长，然后+1
 
 完整的如图所示，打这么多字是为了不让他变小。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
 
+![image](https://user-images.githubusercontent.com/59748598/153466604-3d8598e2-0a30-433f-bd43-7803a9acdf37.png)
 
-![image](https://user-images.githubusercontent.com/59748598/153274121-7e0d0064-833a-4228-8995-fa5f0e60527b.png)
 
 
-完整代码：
+完整代码。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。：
 ```` 
 class Solution {
     public int longestPalindromeSubseq(String s) {
