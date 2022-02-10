@@ -14,6 +14,8 @@ root==3的时候左边两种右边一种left=dp[2]=2,right=dp[1]=1 left*right=2'
 
 2+1+2=5
 
+同样道理我们可以知道，root==4的时候，继续重复的loop一边得到答案
+
  
 ```` 
 class Solution {
