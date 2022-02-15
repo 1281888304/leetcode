@@ -8,7 +8,7 @@
 
 有一个关键的是在findNext，通过parent节点去找next，比如说我们在2，需要通过1去找3 （2就是current.left）用current去找3
 
-这里不可以用直接找下一个，因为我们在next level的时候，可能要找head.right
+这里如果直接找下一个的话，需要在next level那里判断head.right
 
 ```` 
 private Node findNext(Node prev){
@@ -76,5 +76,58 @@ class Solution {
     } 
 }
 ````
+
+findNext用while
+```` 
+class Solution {
+    public Node connect(Node root) {
+        if(root==null) return null;
+        
+        Node head=root;
+        while(head!=null){
+            Node current=head;
+            while(current!=null){
+                if(current.left!=null && current.right!=null){
+                    current.left.next=current.right;
+                    current.right.next=findNext(current);
+                }
+                if(current.left!=null && current.right==null){
+                    current.left.next=findNext(current);
+                }
+                if(current.left==null && current.right!=null){
+                    current.right.next=findNext(current);
+                }
+                
+                current=current.next;
+            }
+            if(head.left!=null)
+                head=head.left;
+            else if(head.right!=null)
+                head=head.right;
+            else{
+                Node nextLineStart=findNext(head);
+                head=nextLineStart;
+            }
+        }
+        return root;
+    }
+    
+    private Node findNext(Node prev){
+        if(prev.next==null)
+            return null;
+        Node cur=prev;
+        while(cur.next!=null){
+            cur=cur.next;
+            if(cur.left!=null) return cur.left;
+                
+            if(cur.right!=null)  return cur.right;
+            
+        }
+        return null;
+    }
+
+}
+````
+
 
 
