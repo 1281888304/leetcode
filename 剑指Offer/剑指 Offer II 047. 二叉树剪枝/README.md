@@ -4,7 +4,7 @@ https://leetcode-cn.com/problems/pOCWxh/
 
 这道题的中心思想就是把root=0且全部分支为0的set null
 
-慵懒的版本：用helper的boolean来查看是否全部都是0，然后一个个loop
+慵懒的版本：用helper的boolean来查看是否全部都是0，然后一个个loop。从上往下查找，没有简介版本好，简洁版本从下往上剪纸
 ```` 
 class Solution {
     public TreeNode pruneTree(TreeNode root) {
