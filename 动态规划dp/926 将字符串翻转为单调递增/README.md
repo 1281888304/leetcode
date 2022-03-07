@@ -10,7 +10,10 @@ https://leetcode.com/problems/flip-string-to-monotone-increasing/
 之后也一样
 
 
-''''
+
+
+ 
+```` 
 class Solution {
     public int minFlipsMonoIncr(String s) {
         int res=0,len=s.length();
@@ -27,7 +30,8 @@ class Solution {
         return res;
     }
 }
-''''
+````
+
 
 
 
