@@ -46,7 +46,42 @@ class Solution {
 
 //递归或者怎样让array size只有2的时候，保证递增就好
 ````
+用for loop的方式（我的方式）
+```` 
+class Solution {
+    public boolean verifyPostorder(int[] postorder) {
+        return check(postorder,0,postorder.length-1);
+    }
+
+    public boolean check(int[] postorder,int start,int end){
+        //说明到了最下面
+        if(start>=end) return true;
+        int rootVal=postorder[end];
+        int right=start;
+        while(postorder[right]<rootVal){
+            right++;
+        }
+        int firstRight=right;
+        for(int i=firstRight;i<end;i++){
+            if(postorder[i]<rootVal){
+                return false;
+            }
+        }
+        return  check(postorder,start,firstRight-1)
+            && check(postorder,firstRight,end-1);
+
+    }
+
+    
+}
 
 
 
+
+
+//递归或者怎样让array size只有2的时候，保证递增就好
+````
+
+
+切记每次分割array，都要用start end
 
