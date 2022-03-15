@@ -9,6 +9,7 @@ https://leetcode-cn.com/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof/
 
 所以我们要考虑两个问题，有多少位（digit）和第一个数字first，用inner for loop去loop char来解决，注意，char也是可以和int一样加减的
 
+传一个只有第一位的nums进去，让里面用for loop char从 '0'到‘9’取判断
 ```` 
 for(int digit=1;digit<=n;digit++){
             //set first
@@ -38,6 +39,7 @@ for(char i='0';i<='9';i++){
             dfs(nums,index+1);
         }
 ````
+
 
 完整代码：
 ```` 
