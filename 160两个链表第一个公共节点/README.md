@@ -11,14 +11,17 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 用算法让他遍历完自己就去遍历别人
 
 ```` 
-ListNode p1=headA;
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode p1=headA;
         ListNode p2=headB;
-        while(p1 !=p2){
-            p1= p1==null ? headB : p1.next;
-            p2= p2==null ?headA : p2.next;
-            
+        while(p1!=p2){
+            p1=(p1==null)? headB :p1.next;
+            p2=(p2==null)? headA :p2.next;
         }
-        return p2;
+        return p1;
+    }
+}
 ````
 
 
