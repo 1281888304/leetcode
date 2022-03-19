@@ -1,0 +1,57 @@
+这个版本有点小问题，先打印A在打印1
+
+原理就是TransferQueue的transfer会直接阻塞当前线程，知道别的线程吧这个transfer的值拿走了，才会继续执行
+
+上面直接就阻塞了，等着下面transfer过来，然后阻塞自己，transfer给下面（唤醒下面）
+
+无锁操作，和locksupport一样，就是单纯的阻塞+唤醒 / park+unpark
+
+```` 
+package 生产者消费者;
+
+import java.util.concurrent.LinkedTransferQueue;
+import java.util.concurrent.TransferQueue;
+
+public class TransferQueueThreadCommunicate {
+
+  public static void main(String[] args) {
+    char[] chars1="12345".toCharArray();
+    char[] chars2="ABCDE".toCharArray();
+
+    TransferQueue<Character> queue=new LinkedTransferQueue<>();
+
+    new Thread(()->{
+      try {
+        for(char c : chars1){
+          System.out.print(queue.take());
+          queue.transfer(c);
+        }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    },"t1").start();
+
+    new Thread(()->{
+      try {
+        for(char c : chars2){
+
+          queue.transfer(c);
+          System.out.print(queue.take());
+        }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    },"t2").start();
+
+
+
+
+  }
+
+}
+
+````
+
+
+
+
