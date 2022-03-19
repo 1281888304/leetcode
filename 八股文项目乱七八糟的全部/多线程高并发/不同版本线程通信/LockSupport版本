@@ -1,0 +1,50 @@
+默认是和释放锁无关，单纯的用工具类根据名字唤醒线程/阻塞线程
+
+```` 
+package 生产者消费者;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.LockSupport;
+
+public class LockSupportThreadCommunicate {
+  private static Thread t1,t2;
+
+  public static void main(String[] args) throws InterruptedException {
+    char[] chars1="12345".toCharArray();
+    char[] chars2="ABCDE".toCharArray();
+
+    t1=new Thread(()->{
+      for(char c: chars1){
+        System.out.println(c);
+        LockSupport.unpark(t2);//叫醒t2
+        LockSupport.park(t1);//阻塞t1
+      }
+    },"t1");
+
+    t2=new Thread(()->{
+      for(char c: chars2){
+        //为了让t1先打印，直接一开始就阻塞t2
+        LockSupport.park(t2);
+        //被叫醒以后打印
+        System.out.println(c);
+        //打印完阻塞自己，唤醒t1
+        LockSupport.unpark(t1);
+//        LockSupport.park(t2);
+      }
+    },"t1");
+
+    t1.start();
+    //TimeUnit.SECONDS.sleep(1);
+    t2.start();
+
+
+
+  }
+
+}
+
+````
+
+
+
