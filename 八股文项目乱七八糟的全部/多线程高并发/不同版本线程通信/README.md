@@ -3,3 +3,5 @@
 LockSupport版本和sync/lock的不同，lock和sync用锁保证每次只有一个线程运行，用锁锁住，locksupport是通过park阻塞/unpark唤醒某个线程实现，所以要先让一开始就park的线程运行，不然可能出bug （还没来得及park阻塞，另外一个线程的幻想就过来了）
 
 TransferQueue也是Locksupport一样允许多线程同时跑， 利用transfer直接就阻塞的原理，来让另外一个线程来take。不过transfer这个先打印下面，因为和LockSupport一样，要先让阻塞的先执行（这里t1是一上来就阻塞的）
+
+多线程同时跑是没问题的，但是要记住通过阻塞/解除阻塞（唤醒）实现
