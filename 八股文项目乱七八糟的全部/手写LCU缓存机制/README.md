@@ -4,9 +4,19 @@ leetcode 146，还是写double linkedlist，这里最好用HashMap记录，不�
 
 题目让我们把最后使用的删掉，也就是头节点，尾巴节点，每次使用（get/put）就move到头节点，然后超过容量（capacity）就删掉尾巴tail，tail是最不使用的
 
-这里为了避免null，用伪装节点来设置head tail
+这里为了避免null，用伪装节点来设置head tail,有了新的就往里面插入
 
 ![Screen Shot 2022-03-28 at 12 12 03 PM](https://user-images.githubusercontent.com/59748598/160469713-b2233ae3-df46-4ace-8bcf-5f8709cef6ad.png)
+
+![Screen Shot 2022-03-28 at 12 17 59 PM](https://user-images.githubusercontent.com/59748598/160470659-bed0bcce-01ef-4254-aa5d-c138a27201be.png)
+
+
+![Screen Shot 2022-03-28 at 12 18 18 PM](https://user-images.githubusercontent.com/59748598/160470690-71e80009-65f0-498a-b864-2fdce4a1c643.png)
+
+get也会moveToHead
+![Screen Shot 2022-03-28 at 12 18 40 PM](https://user-images.githubusercontent.com/59748598/160470748-63e9e620-60d5-4299-968a-306dd2dc8174.png)
+
+
 
 然后往里面走，头节点就是head.next,尾巴tail就是tail.prev
 
