@@ -2,7 +2,7 @@
 
 <img width="531" alt="Screen Shot 2022-04-04 at 12 43 31 PM" src="https://user-images.githubusercontent.com/59748598/161619908-927711e4-c2f3-4594-9801-047256f8cd1a.png">
 
-然后用LinkedList或者Deque的实现类ArrayDeque来代替stack，就用LinkedList好了
+然后用LinkedList或者Deque的实现类ArrayDeque来代替stack，就用LinkedList好了。 stack继承了vector，用sync锁住了，很慢
 
 两种方法：
 ```` 
