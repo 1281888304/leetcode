@@ -2,6 +2,8 @@
 
 但是可以通过i+1的方式，让他递归的时候不碰到上一次
 
+需要时全排列2的那种，需要[1,2,3]得到[2,3,1],这里用了index，就没事
+
 ```` 
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
