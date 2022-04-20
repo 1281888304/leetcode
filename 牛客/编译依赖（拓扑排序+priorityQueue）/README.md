@@ -8,7 +8,7 @@ https://www.nowcoder.com/test/question/74d0c1b6bb5a403a84093d0ffdc58ee2?pid=2958
 
 然后看看哪个是-1（不需要依赖就放进queue），放的是索引index，索引刚好是依赖的，每次拿出来然后就遍历数组，看看哪个和索引一样，就把他的也offer到queue
 
-这里说明了是生序，所以用priorityQueue，然后记得最后delete掉一个就好了
+这里说明了是生序，所以用priorityQueue，然后记得最后delete掉一个就好了。 在queue都是没有依赖的或者依赖已经被编译了，谁先执行多可以，让优先队列自己判断哪个最小执行哪个
 
  
 ```` 
