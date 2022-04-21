@@ -1,57 +1,25 @@
+leetcode 79原题，我有一点没考虑到就是往下一步（上下左右）搜索的时候要更换掉搜索过的数字，不然下面的图BFB的话也能搜索到先搜索B在搜索F再回来搜索已经搜索过的B
+
+
+<img width="662" alt="Screen Shot 2022-04-21 at 10 48 54 AM" src="https://user-images.githubusercontent.com/59748598/164520385-ab966377-1b73-45ec-9f39-bc775f9c1f93.png">
+
+但是leetcode答案放上去还是超时+9/10
+
 ```` 
-import java.util.*;
-
-
-public class Solution {
-    /**
-     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
-     *
-     * 如果该单词是否存在于网格中，返回true,否则返回false
-     * @param board char字符型二维数组 二维网格
-     * @param word string字符串 单词
-     * @return bool布尔型
-     */
-    public boolean exist (char[][] board, String word) {
-        //dfs word search
-        if(board==null || board.length<1 || word ==null || word.length()<1){
-            return false;
-        }
-        int m=board.length;
-        int n=board[0].length;
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        for(int i=0;i<board.length;i++){
+            for(int j=0;j<board[0].length;j++){
                 if(board[i][j]==word.charAt(0)){
-                    if(dfs(board,0,i,j,word))
+                    if(dfs(board,0,i,j,word)){
                         return true;
+                    }
                 }
             }
         }
         return false;
-        
     }
-    
-    public boolean search(int i,int j,int index,String word,char[][] board){
-        if(index==word.length()){
-            return true;
-        }
-        if(i<0 || j<0 || i>=board.length || j>=board[0].length){
-            return false;
-        }
-        if(board[i][j]!=word.charAt(index)){
-            return false;
-        }
-        //now success search this word, try to find next
-        
-        char temp=board[i][j];
-        board[i][j]='%';
-        boolean res= search(i+1,j,index+1,word,board) ||
-        search(i-1,j,index+1,word,board) ||
-        search(i,j+1,index+1,word,board) ||
-        search(i,j-1,index+1,word,board);
-        board[i][j]=temp;
-        return res;
-    }
-    
+    //index is the word's char index
     private boolean dfs(char[][] board,int index,int i,int j,String word){
         if(index==word.length()) return true;
         //consider outside of range because we need go up/down/left/right
@@ -72,11 +40,5 @@ public class Solution {
         return found;
        
     }
-    
-    
-    
-    
-    
-    
 }
 ````
