@@ -1,0 +1,2 @@
+记得scanner.close()
+
