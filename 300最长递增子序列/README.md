@@ -16,7 +16,7 @@ https://leetcode.cn/problems/longest-increasing-subsequence/solution/zui-chang-s
 
 这里的二分法就用的很巧，在这种i<j的时候,并且是先判断是不是小于，没有==break，出来的i可能是1种情况，i==j,到最后如果i/j==res，意味着插入了一个，res++ （这里因为index从0开始，所以要res++）
                                  
-                                   
+我们可以看成比如说一开始res=0，找到index（i/j）的时候，这是res=1，然后如果刚好1是第二个位置（遍历第二个），res=2 （i<j）这个j初始就是新的一个0                              
 
 ```` 
 // Dynamic programming.
