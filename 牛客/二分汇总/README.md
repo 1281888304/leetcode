@@ -42,6 +42,55 @@ public int findPeakElement(int[] nums) {
     }
 ````
 
+普通的基础查找也可以使用二分法，while(left<mid)只不过最后要多加一个判断，判断left/right需不需要返回-1
+
+```` 
+import java.util.*;
+
+
+public class Solution {
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param nums int整型一维数组 
+     * @param target int整型 
+     * @return int整型
+     */
+    public int search (int[] nums, int target) {
+        // write code here
+        if(nums.length<1) return -1;
+        int left=0,right=nums.length-1;
+//         while(left<=right){
+//             int mid=left+(right-left)/2;
+//             if(nums[mid]==target){
+//                 return mid;
+//             }
+//             else if(nums[mid]<target){
+//                 left=mid+1;
+//             }
+//             else{
+//                 right=mid-1;
+//             }
+//         }
+        while(left<right){
+            int mid=left+(right-left)/2;
+            if(nums[mid]<target){
+                left=mid+1;
+            }
+            else{
+                right=mid;
+            }
+        }
+        if(nums[left]==target){
+            return left;
+        }
+        else{
+            return -1;
+        }
+    }
+}
+````
 
 
 
