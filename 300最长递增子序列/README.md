@@ -12,7 +12,9 @@ https://leetcode.cn/problems/longest-increasing-subsequence/solution/zui-chang-s
 
 <img width="734" alt="Screen Shot 2022-05-18 at 6 07 25 PM" src="https://user-images.githubusercontent.com/59748598/169180643-4a629dba-a656-45fd-bf1d-ab638448037a.png">
 
-精髓就在于用二分查找 binary search找到一个刚好适合的，就是nums[i]刚好在的位置，并且把他添加上去或者替换. 二分时搜索tail数组，以防止[1,2,4,6] 6后面是3，其实就没必要懂了，吧4换乘3变成[1,2,3,6]虽然和题目有点点不符合，但是只是为了找总数，问题不大
+精髓就在于用二分查找 binary search找到一个刚好适合的，就是nums[i]刚好在的位置，并且把他添加上去或者替换. 二分时搜索tail数组，以防止[1,2,4,6] 6后面是3，其实就没必要懂了，吧4换乘3变成[1,2,3,6]
+
+虽然和题目有点点不符合，但是只是为了找总数，问题不大，也可以在代码里设置如果不是新增，就不变
 
 这里的二分法就用的很巧，在这种i<j的时候,并且是先判断是不是小于，没有==break，出来的i可能是1种情况，i==j,到最后如果i/j==res，意味着插入了一个，res++ （这里因为index从0开始，所以要res++）
                                  
