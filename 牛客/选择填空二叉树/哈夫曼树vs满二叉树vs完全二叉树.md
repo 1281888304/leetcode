@@ -2,7 +2,8 @@
 
 哈夫曼树上面 哈弗曼树的度只有两种情况，一是只有两个度的结点，二是没有度的结点，即叶子结点。不要求那一层都是，只要没有出度=1的节点（就是只有一个叶子）
 
-![image](https://user-images.githubusercontent.com/59748598/180340436-f67d65bd-2325-4f0b-b235-f90b3ce13483.png)
+![image](https://user-images.githubusercontent.com/59748598/180621378-4760dbed-5a42-4472-8968-bc95d04a28ee.png)
+
 
 满二叉树：一棵树要么是叶子结点（最下面），要么有两个
 
