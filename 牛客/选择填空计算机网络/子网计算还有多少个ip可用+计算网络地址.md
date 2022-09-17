@@ -4,8 +4,9 @@
 把他转成2进制，就可以了然后记得减去2（一个网络地址一个广播地址），基本上前三位不动（因为和255做&运算）
 
 1.2 广播地址
-![Screen Shot 2022-09-16 at 11 15 54 PM](https://user-images.githubusercontent.com/59748598/190843389-9b71f76e-3093-478c-8f67-b6b85ef9ddcf.png)
 
+
+![Screen Shot 2022-09-16 at 11 35 42 PM](https://user-images.githubusercontent.com/59748598/190843995-bac572a5-edeb-48f0-9e5f-186cf0cfdf6b.png)
 
 
 
