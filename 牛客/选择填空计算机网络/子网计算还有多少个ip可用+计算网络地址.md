@@ -4,23 +4,18 @@
 把他转成2进制，就可以了然后记得减去2（一个网络地址一个广播地址），
 
 
-第二个问题网络地址
-
-![Screen Shot 2022-09-16 at 11 10 28 PM](https://user-images.githubusercontent.com/59748598/190843206-b1a764b1-1135-4704-baf4-07d97b7f2216.png)
-
-![Screen Shot 2022-09-16 at 11 10 44 PM](https://user-images.githubusercontent.com/59748598/190843216-ae1dca3c-f541-41d3-a662-5120c7a6aa8a.png)
-
-都转成2进制，然后and &运算 基本上前三位不动（因为和255做&运算）
+第二个问题网络地址 +广播地址 （）广播域==网络地址
 
 
-网络地址=ip地址 and 子网掩码
+![Screen Shot 2022-09-16 at 11 44 27 PM](https://user-images.githubusercontent.com/59748598/190844312-fdfbe538-3328-4ca0-be20-44691a487a57.png)
 
-2.2 广播地址
+网络地址=ip and 子网
+
+![Screen Shot 2022-09-16 at 11 10 44 PM](https://user-images.githubusercontent.com/59748598/190843216-ae1dca3c-f541-41d3-a662-5120c7a6aa8a.png)=
 
 
-![Screen Shot 2022-09-16 at 11 35 42 PM](https://user-images.githubusercontent.com/59748598/190843995-bac572a5-edeb-48f0-9e5f-186cf0cfdf6b.png)
 
-
+广播地址 ： 子网取反 或  ｜  网络地址
 
 
 
